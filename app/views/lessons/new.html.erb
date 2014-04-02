@@ -1,0 +1,23 @@
+<h1>Create a New Lesson</h1>
+
+<% if @lesson.errors.any? %>
+  <h3>Please Fix These Errors</h3>
+  <ul>
+    <% @lesson.errors.full_messages.each do |message| %>
+      <li><%= message %>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
+<form action="/table-of-contents" method="post">
+  <label for="lesson_name">Name of Lesson</label>
+  <input class="form-control" id="lesson_name" name="lesson[name]" type="text" placeholder="Type name here..."><br>
+  <label for="lesson_number">Number of Lesson</label>
+  <input class="form-control" id="lesson_number" name="lesson[number]" type="number" placeholder="The last lesson number was <%= Lesson.maximum("number") %>"><br>
+  <label for="lesson_content">Lesson Contents</label>
+  <textarea class="form-control" rows="10" id="lesson_content" name="lesson[content]" placeholder="All the contents go here..."></textarea><br>
+  <button class="btn btn-primary">Create Lesson</button>
+</form>
+<br>
+<p><a href="/">Back to Table of Contents</a></p>

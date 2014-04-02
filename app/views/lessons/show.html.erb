@@ -1,0 +1,13 @@
+<h1><%= @lesson.name %></h1>
+
+<p><%= @lesson.content %>
+<br><br>
+<p>
+  <a href="/lessons/<%= @lesson.url_name %>/edit" class="btn btn-primary">Edit Lesson</a>
+  <a href="/lessons/<%= @lesson.url_name %>/" class="btn btn-danger"
+    data-confirm="WARNING: This connot be un-done! Are you sure you want to delete?"
+    data-method="delete"
+    rel="nofollow">Delete Lesson</a>
+</p>
+<br>
+<p><a href="/">Back to Table of Contents</a></p>
