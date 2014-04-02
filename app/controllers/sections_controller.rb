@@ -39,6 +39,7 @@ class SectionsController < ApplicationController
 
   def destroy
     @section = Section.find_by(url_name: params[:url_name])
+    @section.lessons.destroy_all
     @section.destroy
     redirect_to "/"
   end
