@@ -9,5 +9,14 @@
     data-method="delete"
     rel="nofollow">Delete Lesson</a>
 </p>
+<br><br>
+<% if @lesson.prev != nil %>
+  <a href="/lessons/<%= @lesson.prev.url_name %>" class="btn btn-primary btn-sm">Previous Lesson</a>
+<% end %>
+
+<% if @lesson.next != nil %>
+  <a href="/lessons/<%= @lesson.next.url_name %>" class="btn btn-primary btn-sm">Next Lesson</a>
+<% end %>
+
 <br>
 <p><a href="/">Back to Table of Contents</a></p>
