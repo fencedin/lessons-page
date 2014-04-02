@@ -1,0 +1,19 @@
+<h1>Create a New Section</h1>
+
+<% if @section.errors.any? %>
+  <h3>Please Fix These Errors</h3>
+  <ul>
+    <% @section.errors.full_messages.each do |message| %>
+      <li><%= message %>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
+<form action="/table-of-contents" method="post">
+  <label for="section_name">Name of Section</label>
+  <input class="form-control" id="section_name" name="section[name]" type="text" value="<%= @section.name %>" placeholder="Type name here..."><br>
+  <button class="btn btn-primary">Create Section</button>
+</form>
+<br>
+<p><a href="/">Back to Table of Contents</a></p>

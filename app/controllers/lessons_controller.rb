@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new(params[:lesson])
     @lesson.url_name = @lesson.url_format(@lesson.name)
     if @lesson.save
-      redirect_to '/table-of-contents'
+      redirect_to '/'
     else
       render 'lessons/new.html.erb'
     end
@@ -32,7 +32,9 @@ class LessonsController < ApplicationController
   def update
     @lesson = Lesson.find_by(url_name: params[:url_name])
     @lesson.update(params[:lesson])
-    redirect_to "/lessons/#{@lesson.url_name}"
+    @lesson.update(url_name: @lesson.url_format(@lesson.name))
+    @lesson.url_name = @lesson.url_format(@lesson.name)
+    redirect_to '/'
   end
 
   def destroy

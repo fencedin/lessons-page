@@ -1,0 +1,15 @@
+<h1><%= @section.name %></h1>
+<ul>
+  <% @section.lessons.each do |lesson| %>
+    <li><a href="/lessons/<%= lesson.url_name %>"><%= lesson.name %></a></li>
+  <% end %>
+</ul>
+<p>
+  <a href="/sections/<%= @section.url_name %>/edit" class="btn btn-primary">Edit section</a>
+  <a href="/sections/<%= @section.url_name %>/" class="btn btn-danger"
+    data-confirm="WARNING: This will delete all lessons under this section. This connot be un-done! Are you sure you want to delete?"
+    data-method="delete"
+    rel="nofollow">Delete Section</a>
+</p>
+<p><a href="/lessons/new" class="btn btn-info">Create a New Lesson</a></p>
+<p><a href="/">Back to Table of Contents</a></p>

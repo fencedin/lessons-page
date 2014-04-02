@@ -1,6 +1,7 @@
 =Rebuild Learn How To Program
 
 <em>Vincent Rotter & Liz Tom</em>
+<br>
 <em>Epicodus Week 7, Day 3</em>
 
 ====An Epicodus project to recreate the learnhowtoprogram.com website.

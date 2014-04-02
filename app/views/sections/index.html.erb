@@ -1,0 +1,16 @@
+<h1>Table of Contents</h1>
+<br><br>
+<ul>
+  <% @sections.each do |section| %>
+    <li><a href="/sections/<%= section.url_name %>"><%= section.name %></li>
+    <ul>
+      <% section.lessons.each do |lesson| %>
+        <li><a href="/lessons/<%= lesson.url_name %>"><%= lesson.name %></a></li>
+      <% end %>
+    </ul>
+  <% end %>
+</ul>
+<br><br>
+<p><a href="/lessons/new" class="btn btn-info">Create a New Lesson</a></p>
+<p><a href="/sections/new" class="btn btn-info">Create a New Section</a></p>
+

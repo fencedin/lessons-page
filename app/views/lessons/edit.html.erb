@@ -12,12 +12,25 @@
 <br>
 <form action="/lessons/<%= @lesson.url_name %>" method="post">
   <input name="_method" type="hidden" value="patch">
-  <label for="lesson_name">Name of Lesson</label>
-  <input class="form-control" id="lesson_name" name="lesson[name]" type="text" value="<%= @lesson.name %>" placeholder="Type name here..."><br>
-  <label for="lesson_number">Number of Lesson</label>
-  <input class="form-control" id="lesson_number" name="lesson[number]" type="number" value="<%= @lesson.number %>" placeholder="The last lesson number was <%= Lesson.maximum("number") %>"><br>
-  <label for="lesson_content">Lesson Contents</label>
-  <textarea class="form-control" rows="10" id="lesson_content" name="lesson[content]"placeholder="All the contents go here..."><%= @lesson.content %></textarea><br>
+  <div class="col-md-12">
+    <label for="lesson_name">Name of Lesson</label>
+    <input class="form-control" id="lesson_name" name="lesson[name]" type="text" value="<%= @lesson.name %>" placeholder="Type name here..."><br>
+  </div>
+  <div class="col-md-6">
+    <label for="section_name">Section</label>
+    <select name="lesson[section_id]" class="form-control">
+      <% Section.all.each do |section| %>
+        <option value="<%= section.id %>" id="section_name"><%= section.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="lesson_number">Number of Lesson</label>
+    <input class="form-control" id="lesson_number" name="lesson[number]" type="number"  value="<%= @lesson.number %>" placeholder="The last lesson number was <%= Lesson.maximum("number") %>"><br>
+  </div>
+  <div class="col-md-12">
+    <label for="lesson_content">Lesson Contents</label>
+    <textarea class="form-control" rows="10" id="lesson_content" name="lesson[content]"  placeholder="All the contents go here..."><%= @lesson.content %></textarea><br>
   <button class="btn btn-primary">Update Lesson</button>
 </form>
 <br>

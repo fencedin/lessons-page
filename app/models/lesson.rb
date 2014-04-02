@@ -4,6 +4,8 @@ class Lesson < ActiveRecord::Base
   validates :number, presence: true,
                      uniqueness: true
   validates :content, presence: true
+  validates :section_id, presence: true
+  belongs_to :section
 
   def url_format(name)
     name.downcase.gsub ' ', '-'
