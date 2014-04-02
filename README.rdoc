@@ -1,9 +1,9 @@
 =Rebuild Learn How To Program
 
-_Vincent Rotter & Liz Tom_
-_Epicodus Week 7, Day 3_
+_Vincent Rotter & Liz Tom_:
+_Epicodus Week 7, Day 3_:
 
-==An Epicodus project to recreate the learnhowtoprogram.com website.
+===An Epicodus project to recreate the learnhowtoprogram.com website.
 
 learnhowtoprogram.com is powered by a fairly simple Rails app. Rebuild it yourself.
 
