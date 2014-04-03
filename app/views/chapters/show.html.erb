@@ -9,13 +9,13 @@
     </ul>
   <% end %>
 </ul>
+<br><br>
 <p>
   <a href="/chapters/<%= @chapter.url_name %>/edit" class="btn btn-primary">Edit Chapter</a>
   <a href="/chapters/<%= @chapter.url_name %>/" class="btn btn-danger"
     data-confirm="WARNING: This will delete all lessons and sections under this chapter. This connot be un-done! Are you sure you want to delete?"
     data-method="delete"
     rel="nofollow">Delete Chapter</a>
-</p>
+</p><br><br>
 <p><a href="/lessons/new" class="btn btn-info">Create a New Lesson</a></p>
 <p><a href="/sections/new" class="btn btn-info">Create a New Section</a></p>
-<p><a href="/">Back to Table of Contents</a></p>

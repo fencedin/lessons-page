@@ -1,3 +1,15 @@
-footer {
-  text-align: center
+a {
+  color: #D00400 !important;
+}
+
+.btn {
+  color: white !important;
+}
+
+body {
+  background-color: #F5F5F5 !important;
+}
+
+.navbar {
+  background-color: white !important;
 }
