@@ -1,8 +1,7 @@
-class Section < ActiveRecord::Base
+class Chapter < ActiveRecord::Base
   validates :name, presence: true,
                    uniqueness: true
-  has_many :lessons
-  belongs_to :chapter
+  has_many :sections
 
   def url_format(name)
     name.downcase.gsub ' ', '-'

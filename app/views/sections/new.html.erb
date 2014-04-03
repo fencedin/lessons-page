@@ -10,10 +10,29 @@
 <% end %>
 
 <br>
-<form action="/table-of-contents" method="post">
-  <label for="section_name">Name of Section</label>
-  <input class="form-control" id="section_name" name="section[name]" type="text" value="<%= @section.name %>" placeholder="Type name here..."><br>
-  <button class="btn btn-primary">Create Section</button>
+
+<form action="/sections" method="post">
+  <div class="col-md-12">
+    <label for="section_name">Name of Section</label>
+    <input class="form-control" id="section_name" name="section[name]" type="text" value="<%= @section.name %>" placeholder="Type name here..."><br>
+  </div>
+  <div class="col-md-6">
+    <label for="chapter_name">Chapter</label>
+    <select name="section[chapter_id]" class="form-control">
+      <% Chapter.all.each do |chapter| %>
+        <option value="<%= chapter.id %>" id="chapter_name"><%= chapter.name %></option>
+      <% end %>
+    </select>
+  </div>
+  <div class="col-md-6">
+    <label for="section_number">Number of Section</label>
+    <input class="form-control" id="section_number" name="section[number]" type="number"  value="<%= @section.number %>" placeholder="The last section number was <%= Section.maximum("number") %>"><br>
+  </div>
+  <div class="col-md-12">
+    <button class="btn btn-primary">Create Section</button>
+  </div>
 </form>
 <br>
+
 <p><a href="/">Back to Table of Contents</a></p>
+

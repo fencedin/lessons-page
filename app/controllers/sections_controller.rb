@@ -1,6 +1,6 @@
 class SectionsController < ApplicationController
   def index
-    @sections = Section.all
+    @sections = Section.all.sort_by { |i| i.number }
     render 'sections/index.html.erb'
   end
 

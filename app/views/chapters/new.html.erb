@@ -1,0 +1,25 @@
+<h1>Create a New Chapter</h1>
+
+<% if @chapter.errors.any? %>
+  <h3>Please Fix These Errors</h3>
+  <ul>
+    <% @chapter.errors.full_messages.each do |message| %>
+      <li><%= message %>
+    <% end %>
+  </ul>
+<% end %>
+
+<br>
+<form action="/table-of-contents" method="post">
+  <div class="col-md-6">
+    <label for="chapter_name">Name of Chapter</label>
+    <input class="form-control" id="chapter_name" name="chapter[name]" type="text" value="<%= @chapter.name %>" placeholder="Type name here..."><br>
+  </div>
+  <div class="col-md-6">
+    <label for="chapter_number">Number of Chapter</label>
+    <input class="form-control" id="chapter_number" name="chapter[number]" type="number"  value="<%= @chapter.number %>" placeholder="The last chapter number was <%= Chapter.maximum("number") %>"><br>
+  </div>
+  <button class="btn btn-primary">Create Chapter</button>
+</form>
+<br>
+<p><a href="/">Back to Table of Contents</a></p>
